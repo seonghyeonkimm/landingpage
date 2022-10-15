@@ -1,0 +1,31 @@
+overwrite: true
+documents: null
+schema: "./src/graphql/modules/**/*.graphql"
+generates:
+  ./src/graphql/__generated__/schema.graphql:
+    plugins:
+      - schema-ast
+  ./src/graphql/__generated__/typeDefs.ts:
+    plugins:
+      - add:
+          content: |
+            export default /* GraphQL */`
+      - schema-ast
+      - add:
+          placement: "append"
+          content: "`"
+  ./src/graphql/modules/:
+    preset: graphql-modules
+    presetConfig:
+      baseTypesPath: ../__generated__/graphql.ts
+      filename: __generated__/module-types.ts
+    config:
+      contextType: ../modules#GrahpQLContext
+      mapperTypeSuffix: Model
+      mappers:
+        Cart: "@prisma/client#Cart"
+        CartItem: "@prisma/client#CartItem"
+    plugins:
+      - typescript
+      - typescript-resolvers
+      - "typescript-operations"

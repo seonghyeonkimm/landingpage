@@ -1,0 +1,71 @@
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Cart {
+  id    String     @id @default(auto()) @map("_id") @db.ObjectId
+  items CartItem[]
+}
+
+model CartItem {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  description String?
+  price       Int
+  quantity    Int
+  image       String?
+  cartId      String
+  cart        Cart    @relation(fields: [cartId], references: [id], onDelete: Cascade)
+}
+
+// NextAuth.js
+model Account {
+  id                 String @id @default(auto()) @map("_id") @db.ObjectId
+  userId             String
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String? @db.String @map("refreshToken")
+  access_token       String? @db.String @map("accessToken")
+  expires_at         Int? @map("expiresAt")
+  token_type         String? @map("tokenType")
+  scope              String?
+  id_token           String? @db.String  @map("idToken")
+  session_state      String? @map("sessionState")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id            String    @id @default(auto()) @map("_id") @db.ObjectId
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  accounts      Account[]
+  sessions      Session[]
+}
+
+model VerificationToken {
+  id            String    @id @default(auto()) @map("_id") @db.ObjectId
+  identifier String
+  token      String   @unique 
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
