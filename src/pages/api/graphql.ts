@@ -18,7 +18,7 @@ const server = createServer<{ req: NextApiRequest; res: NextApiResponse }>({
       ? [
           useErrorHandler((errorHandler) =>
             errorHandler.map((e) => {
-              console.log(e.message);
+              console.log("❌ error: ", e.message);
             })
           ),
         ]
