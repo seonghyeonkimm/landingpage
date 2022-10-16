@@ -2,18 +2,24 @@ import Link from "next/link";
 import * as React from "react";
 
 import Logo from "src/assets/logo.svg";
+import * as styles from "./AppBar.css";
+import Button from "./Button";
 
 type Props = {
-  logo?: string;
+  onRightButtonClick?: () => void;
 };
 
-function AppBar({ logo }: Props) {
+function AppBar({ onRightButtonClick }: Props) {
   return (
-    <header>
+    <header className={styles.header}>
       <Link href="#">
-        <Logo />
+        <span>
+          <Logo />
+        </span>
       </Link>
-      <button>Get Early Access</button>
+      <Button type="button" onClick={onRightButtonClick}>
+        얼리 엑세스 신청하기
+      </Button>
     </header>
   );
 }
