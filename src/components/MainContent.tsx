@@ -1,17 +1,29 @@
+import Image from "next/image";
 import * as React from "react";
 
-type Props = {};
+import mainImage from "src/assets/main-image.png";
 
-function MainContent(props: Props) {
+import Button from "./Button";
+
+import * as styles from "./MainContent.css";
+
+function MainContent() {
   return (
-    <main>
-      <article>
-        <section>
-          <h1>Title</h1>
-          <p>Descriptions</p>
-          <button>Get Early Access</button>
+    <main className={styles.main}>
+      <article className={styles.article}>
+        <section className={styles.leftContainer}>
+          <h1 className={styles.h1}>Event Registration Reimagined</h1>
+          <p className={styles.p}>
+            Manage your event registrations hassle free and without any
+            dependency with the technical team. Isn’t it sounds amazing?
+          </p>
+          <Button type="button" size="lg" className={styles.button}>
+            Get Early Access
+          </Button>
         </section>
-        <section>Images</section>
+        <section className={styles.rightContainer}>
+          <Image src={mainImage} />
+        </section>
       </article>
     </main>
   );

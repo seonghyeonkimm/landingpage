@@ -1,8 +1,10 @@
 import colors from "tailwindcss/colors";
 import { createGlobalTheme } from "@vanilla-extract/css";
 import { defineProperties, createSprinkles } from "@vanilla-extract/sprinkles";
+import { recipe, RecipeVariants } from "@vanilla-extract/recipes";
 
 export const darkMode = "[data-theme='dark']";
+
 function px(value: string | number) {
   return `${value}px`;
 }
@@ -86,19 +88,25 @@ const spacing = {
   12: px(12),
   20: px(20),
   32: px(32),
+  36: px(36),
   40: px(40),
   48: px(48),
+  64: px(64),
+  80: px(80),
+  88: px(88),
   96: px(96),
   120: px(120),
+  auto: "auto",
 };
 
 const contentWidth = {
-  "480": px(480),
-  "600": px(600),
-  "740": px(740),
-  "960": px(960),
-  "1120": px(1120),
-  "1350": px(1350),
+  335: px(335),
+  480: px(480),
+  600: px(600),
+  740: px(740),
+  960: px(960),
+  1120: px(1120),
+  1350: px(1350),
 };
 
 const weight = {
@@ -123,7 +131,7 @@ const responsiveProperties = defineProperties({
   conditions: {
     mobile: {},
     tablet: { "@media": `screen and (min-width: ${breakpoints.tablet}px)` },
-    desktop: { "@media": `screen and (min-width: ${breakpoints.desktop})` },
+    desktop: { "@media": `screen and (min-width: ${breakpoints.desktop}px)` },
   },
   defaultCondition: "mobile",
   properties: {
@@ -138,6 +146,10 @@ const responsiveProperties = defineProperties({
       "space-between",
     ],
     alignItems: ["stretch", "flex-start", "center", "flex-end"],
+
+    width: contentWidth,
+    maxWidth: contentWidth,
+
     paddingTop: spacing,
     paddingBottom: spacing,
     paddingLeft: spacing,
@@ -158,6 +170,9 @@ const responsiveProperties = defineProperties({
   },
 });
 
+export const sprinkles = createSprinkles(responsiveProperties);
+export type Sprinkles = Parameters<typeof sprinkles>[0];
+
 export const vars = createGlobalTheme(":root", {
   palette,
   spacing,
@@ -166,5 +181,73 @@ export const vars = createGlobalTheme(":root", {
   border,
 });
 
-export const sprinkles = createSprinkles(responsiveProperties);
-export type Sprinkles = Parameters<typeof sprinkles>[0];
+export const Typography = recipe({
+  base: {},
+  variants: {
+    bold: {
+      true: {
+        fontWeight: vars.weight.strong,
+      },
+    },
+    variant: {
+      display2xl: {
+        fontSize: px(64),
+        lineHeight: px(80),
+        letterSpacing: "-0.02em",
+      },
+      displayxl: {
+        fontSize: px(56),
+        lineHeight: px(72),
+        letterSpacing: "-0.01em",
+      },
+      displaylg: {
+        fontSize: px(48),
+        lineHeight: px(60),
+        letterSpacing: "-0.01em",
+      },
+      displaymd: {
+        fontSize: px(36),
+        lineHeight: px(48),
+
+        letterSpacing: "-0.01em",
+      },
+      displaysm: {
+        fontSize: px(30),
+        lineHeight: px(40),
+
+        letterSpacing: "-0.01em",
+      },
+      displayxs: {
+        fontSize: px(24),
+        lineHeight: px(32),
+        letterSpacing: "-0.01em",
+      },
+      bodyxl: {
+        fontSize: px(20),
+        lineHeight: px(28),
+        letterSpacing: "0.01em",
+      },
+      bodylg: {
+        fontSize: px(18),
+        lineHeight: px(28),
+        letterSpacing: "0.01em",
+      },
+      bodymd: {
+        fontSize: px(16),
+        lineHeight: px(24),
+        letterSpacing: "0.01em",
+      },
+      bodysm: {
+        fontSize: px(14),
+        lineHeight: px(20),
+        letterSpacing: "0.01em",
+      },
+      bodyxs: {
+        fontSize: px(12),
+        lineHeight: px(16),
+        letterSpacing: "0.01em",
+      },
+    },
+  },
+});
+export type TypographyVariants = RecipeVariants<typeof Typography>;

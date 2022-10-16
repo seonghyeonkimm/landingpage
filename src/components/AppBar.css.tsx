@@ -15,6 +15,5 @@ export const header = style([
   }),
   {
     height: 80,
-    minWidth: 375,
   },
 ]);

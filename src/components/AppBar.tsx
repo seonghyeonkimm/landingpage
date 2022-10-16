@@ -5,11 +5,7 @@ import Logo from "src/assets/logo.svg";
 import * as styles from "./AppBar.css";
 import Button from "./Button";
 
-type Props = {
-  onRightButtonClick?: () => void;
-};
-
-function AppBar({ onRightButtonClick }: Props) {
+function AppBar() {
   return (
     <header className={styles.header}>
       <Link href="#">
@@ -17,9 +13,7 @@ function AppBar({ onRightButtonClick }: Props) {
           <Logo />
         </span>
       </Link>
-      <Button type="button" onClick={onRightButtonClick}>
-        얼리 엑세스 신청하기
-      </Button>
+      <Button type="button">Get Early Access</Button>
     </header>
   );
 }

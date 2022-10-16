@@ -13,6 +13,7 @@ globalStyle("html", {
   color: vars.palette.scales.gray900,
   fontFamily: "Noto Sans KR",
   boxSizing: "border-box",
+  minWidth: 375,
 });
 
 globalStyle("*, *::before, *::after", {
