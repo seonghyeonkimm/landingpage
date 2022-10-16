@@ -1,13 +1,18 @@
 import Link from "next/link";
 import * as React from "react";
 
-import Logo from "src/assets/logo.svg";
-import * as styles from "./AppBar.css";
 import Button from "./Button";
+import useWindowSrollYPosition from "src/hooks/useWindowScrollYPosition";
+
+import * as styles from "./AppBar.css";
+
+import Logo from "src/assets/logo.svg";
 
 function AppBar() {
+  const scrollYPosition = useWindowSrollYPosition();
+
   return (
-    <header className={styles.header}>
+    <header className={styles.header({ scroll: scrollYPosition > 0 })}>
       <Link href="#">
         <span>
           <Logo />
