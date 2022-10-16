@@ -15,6 +15,8 @@ export const breakpoints = {
   tablet: 768,
   desktop: 1024,
 };
+export const mediaTablet = `screen and (min-width: ${breakpoints.tablet}px)`;
+export const mediaDesktop = `screen and (min-width: ${breakpoints.desktop}px)`;
 
 const palette = {
   white: "#fff",
@@ -23,6 +25,7 @@ const palette = {
   yellow: colors.yellow["300"],
   semantics: {
     primary: "#0876DD",
+    secondary: "#CFFAFE",
   },
   scales: {
     green50: colors.emerald["50"],
@@ -105,8 +108,10 @@ const spacing = {
 
 const contentWidth = {
   335: px(335),
+  400: px(400),
   480: px(480),
   600: px(600),
+  700: px(700),
   740: px(740),
   960: px(960),
   1120: px(1120),
@@ -157,6 +162,7 @@ const responsiveProperties = defineProperties({
 
     width: contentWidth,
     maxWidth: contentWidth,
+    height: contentWidth,
 
     paddingTop: spacing,
     paddingBottom: spacing,

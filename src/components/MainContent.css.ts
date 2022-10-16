@@ -1,5 +1,10 @@
 import { style } from "@vanilla-extract/css";
-import { sprinkles, Typography } from "src/styles/theme.css";
+import {
+  mediaDesktop,
+  sprinkles,
+  Typography,
+  vars,
+} from "src/styles/theme.css";
 
 export const main = style([
   sprinkles({
@@ -51,6 +56,7 @@ export const button = style({
 });
 
 export const rightContainer = style([
+  { position: "relative" },
   sprinkles({
     marginX: "auto",
     maxWidth: {
@@ -61,6 +67,33 @@ export const rightContainer = style([
     marginTop: {
       tablet: 64,
       mobile: 88,
+    },
+  }),
+]);
+
+export const circle = style([
+  {
+    borderRadius: vars.border.radius.full,
+    background: vars.palette.semantics.secondary,
+    position: "absolute",
+    top: "-20%",
+    left: "15%",
+    zIndex: -1,
+
+    "@media": {
+      [`${mediaDesktop}`]: {
+        top: "-50%",
+      },
+    },
+  },
+  sprinkles({
+    width: {
+      tablet: 700,
+      mobile: 400,
+    },
+    height: {
+      tablet: 700,
+      mobile: 400,
     },
   }),
 ]);

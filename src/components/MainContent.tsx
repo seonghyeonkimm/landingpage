@@ -22,6 +22,7 @@ function MainContent() {
           </Button>
         </section>
         <section className={styles.rightContainer}>
+          <div className={styles.circle} />
           <Image src={mainImage} />
         </section>
       </article>
