@@ -86,7 +86,11 @@ const spacing = {
   4: px(4),
   8: px(8),
   12: px(12),
+  16: px(16),
+  18: px(18),
   20: px(20),
+  24: px(24),
+  28: px(28),
   32: px(32),
   36: px(36),
   40: px(40),
@@ -147,6 +151,10 @@ const responsiveProperties = defineProperties({
     ],
     alignItems: ["stretch", "flex-start", "center", "flex-end"],
 
+    fontSize: spacing,
+    lineHeight: spacing,
+    letterSpacing: ["-0.02em", "-0.01em", "0.01em", "0.02em"],
+
     width: contentWidth,
     maxWidth: contentWidth,
 
@@ -190,11 +198,20 @@ export const Typography = recipe({
       },
     },
     variant: {
-      display2xl: {
-        fontSize: px(64),
-        lineHeight: px(80),
-        letterSpacing: "-0.02em",
-      },
+      display2xl: sprinkles({
+        fontSize: {
+          tablet: 64,
+          mobile: 36,
+        },
+        lineHeight: {
+          tablet: 80,
+          mobile: 48,
+        },
+        letterSpacing: {
+          tablet: "-0.02em",
+          mobile: "-0.01em",
+        },
+      }),
       displayxl: {
         fontSize: px(56),
         lineHeight: px(72),
@@ -227,11 +244,17 @@ export const Typography = recipe({
         lineHeight: px(28),
         letterSpacing: "0.01em",
       },
-      bodylg: {
-        fontSize: px(18),
-        lineHeight: px(28),
+      bodylg: sprinkles({
+        fontSize: {
+          tablet: 18,
+          mobile: 16,
+        },
+        lineHeight: {
+          tablet: 28,
+          mobile: 24,
+        },
         letterSpacing: "0.01em",
-      },
+      }),
       bodymd: {
         fontSize: px(16),
         lineHeight: px(24),
