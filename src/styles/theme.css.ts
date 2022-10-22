@@ -1,13 +1,8 @@
 import colors from "tailwindcss/colors";
 import { createGlobalTheme } from "@vanilla-extract/css";
-import { defineProperties, createSprinkles } from "@vanilla-extract/sprinkles";
-import { recipe, RecipeVariants } from "@vanilla-extract/recipes";
+import { px } from "./utils";
 
 export const darkMode = "[data-theme='dark']";
-
-function px(value: string | number) {
-  return `${value}px`;
-}
 
 export type Breakpoint = keyof typeof breakpoints;
 export const breakpoints = {
@@ -136,57 +131,6 @@ const border = {
   },
 };
 
-const responsiveProperties = defineProperties({
-  conditions: {
-    mobile: {},
-    tablet: { "@media": `screen and (min-width: ${breakpoints.tablet}px)` },
-    desktop: { "@media": `screen and (min-width: ${breakpoints.desktop}px)` },
-  },
-  defaultCondition: "mobile",
-  properties: {
-    display: ["none", "flex", "block", "inline"],
-    flexDirection: ["row", "column"],
-    justifyContent: [
-      "stretch",
-      "flex-start",
-      "center",
-      "flex-end",
-      "space-around",
-      "space-between",
-    ],
-    alignItems: ["stretch", "flex-start", "center", "flex-end"],
-
-    fontSize: spacing,
-    lineHeight: spacing,
-    letterSpacing: ["-0.02em", "-0.01em", "0.01em", "0.02em"],
-
-    width: contentWidth,
-    maxWidth: contentWidth,
-    height: contentWidth,
-
-    paddingTop: spacing,
-    paddingBottom: spacing,
-    paddingLeft: spacing,
-    paddingRight: spacing,
-    marginTop: spacing,
-    marginBottom: spacing,
-    marginLeft: spacing,
-    marginRight: spacing,
-  },
-  shorthands: {
-    margin: ["marginTop", "marginBottom", "marginLeft", "marginRight"],
-    marginX: ["marginLeft", "marginRight"],
-    marginY: ["marginTop", "marginBottom"],
-    padding: ["paddingTop", "paddingBottom", "paddingLeft", "paddingRight"],
-    paddingX: ["paddingLeft", "paddingRight"],
-    paddingY: ["paddingTop", "paddingBottom"],
-    placeItems: ["justifyContent", "alignItems"],
-  },
-});
-
-export const sprinkles = createSprinkles(responsiveProperties);
-export type Sprinkles = Parameters<typeof sprinkles>[0];
-
 export const vars = createGlobalTheme(":root", {
   palette,
   spacing,
@@ -194,89 +138,3 @@ export const vars = createGlobalTheme(":root", {
   weight,
   border,
 });
-
-export const Typography = recipe({
-  base: {},
-  variants: {
-    bold: {
-      true: {
-        fontWeight: vars.weight.strong,
-      },
-    },
-    variant: {
-      display2xl: sprinkles({
-        fontSize: {
-          tablet: 64,
-          mobile: 36,
-        },
-        lineHeight: {
-          tablet: 80,
-          mobile: 48,
-        },
-        letterSpacing: {
-          tablet: "-0.02em",
-          mobile: "-0.01em",
-        },
-      }),
-      displayxl: {
-        fontSize: px(56),
-        lineHeight: px(72),
-        letterSpacing: "-0.01em",
-      },
-      displaylg: {
-        fontSize: px(48),
-        lineHeight: px(60),
-        letterSpacing: "-0.01em",
-      },
-      displaymd: {
-        fontSize: px(36),
-        lineHeight: px(48),
-
-        letterSpacing: "-0.01em",
-      },
-      displaysm: {
-        fontSize: px(30),
-        lineHeight: px(40),
-
-        letterSpacing: "-0.01em",
-      },
-      displayxs: {
-        fontSize: px(24),
-        lineHeight: px(32),
-        letterSpacing: "-0.01em",
-      },
-      bodyxl: {
-        fontSize: px(20),
-        lineHeight: px(28),
-        letterSpacing: "0.01em",
-      },
-      bodylg: sprinkles({
-        fontSize: {
-          tablet: 18,
-          mobile: 16,
-        },
-        lineHeight: {
-          tablet: 28,
-          mobile: 24,
-        },
-        letterSpacing: "0.01em",
-      }),
-      bodymd: {
-        fontSize: px(16),
-        lineHeight: px(24),
-        letterSpacing: "0.01em",
-      },
-      bodysm: {
-        fontSize: px(14),
-        lineHeight: px(20),
-        letterSpacing: "0.01em",
-      },
-      bodyxs: {
-        fontSize: px(12),
-        lineHeight: px(16),
-        letterSpacing: "0.01em",
-      },
-    },
-  },
-});
-export type TypographyVariants = RecipeVariants<typeof Typography>;

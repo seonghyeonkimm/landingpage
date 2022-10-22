@@ -1,10 +1,7 @@
 import { style } from "@vanilla-extract/css";
-import {
-  mediaDesktop,
-  sprinkles,
-  Typography,
-  vars,
-} from "src/styles/theme.css";
+import { Typography } from "src/styles/recipe.css";
+import { sprinkles } from "src/styles/sprinkles.css";
+import { mediaDesktop, vars } from "src/styles/theme.css";
 
 export const main = style([
   sprinkles({

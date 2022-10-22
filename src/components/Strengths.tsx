@@ -1,3 +1,4 @@
+// TODO: import sort not working
 import * as React from "react";
 
 type Props = {};
@@ -11,7 +12,7 @@ function Strengths(props: Props) {
       <section>
         <div>
           <img />
-          <h2>Strength1</h2>
+          <h2>Strength</h2>
           <p>Strength description</p>
         </div>
         <div>

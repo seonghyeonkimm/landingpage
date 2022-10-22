@@ -1,7 +1,7 @@
-import { style } from "@vanilla-extract/css";
 import { recipe, RecipeVariants } from "@vanilla-extract/recipes";
+import { sprinkles } from "src/styles/sprinkles.css";
 
-import { sprinkles, vars } from "src/styles/theme.css";
+import { vars } from "src/styles/theme.css";
 
 export const header = recipe({
   base: [
