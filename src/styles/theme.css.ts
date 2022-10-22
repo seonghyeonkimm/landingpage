@@ -11,6 +11,9 @@ export const breakpoints = {
   desktop: 1024,
 };
 export const mediaTablet = `screen and (min-width: ${breakpoints.tablet}px)`;
+export const mediaTabletOnly = `screen and (min-width: ${
+  breakpoints.tablet
+}px) and (max-width: ${breakpoints.desktop - 1}px)`;
 export const mediaDesktop = `screen and (min-width: ${breakpoints.desktop}px)`;
 
 const palette = {

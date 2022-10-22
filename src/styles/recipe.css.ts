@@ -13,6 +13,7 @@ export const Typography = recipe({
     },
     variant: {
       display2xl: sprinkles({
+        margin: 0,
         fontSize: {
           tablet: 64,
           mobile: 36,

@@ -4,9 +4,11 @@ import Footer from "src/components/Footer";
 import MainContent from "src/components/MainContent";
 import Strengths from "src/components/Strengths";
 
+import * as styles from "./index.css";
+
 function MainPage() {
   return (
-    <section>
+    <section className={styles.section}>
       <AppBar />
       <MainContent />
       <Strengths />

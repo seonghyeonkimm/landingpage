@@ -11,8 +11,10 @@ export const header = recipe({
       alignItems: "center",
       height: 80,
       zIndex: 1,
-      position: "sticky",
+      position: "fixed",
       top: 0,
+      left: 0,
+      right: 0,
     },
     sprinkles({
       paddingX: {
