@@ -1,4 +1,4 @@
-import { vars } from "src/styles/theme.css";
+import { colorVars, vars } from "src/styles/theme.css";
 
 import { recipe, RecipeVariants } from "@vanilla-extract/recipes";
 
@@ -11,7 +11,7 @@ export const button = recipe({
     paddingLeft: 16,
     paddingRight: 16,
 
-    background: vars.palette.semantics.primary,
+    background: colorVars.semantics.primary,
     borderRadius: vars.border.radius[8],
     border: "none",
 
@@ -20,7 +20,7 @@ export const button = recipe({
     lineHeight: 20,
     letterSpacing: "0.01em",
 
-    color: vars.palette.white,
+    color: colorVars.palette.white,
 
     selectors: {
       "&:hover": {

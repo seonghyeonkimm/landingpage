@@ -1,7 +1,7 @@
 import { style } from "@vanilla-extract/css";
 import { Typography } from "src/styles/recipe.css";
 import { sprinkles } from "src/styles/sprinkles.css";
-import { mediaDesktop, vars } from "src/styles/theme.css";
+import { colorVars, mediaDesktop, vars } from "src/styles/theme.css";
 
 export const main = style([
   sprinkles({
@@ -71,7 +71,7 @@ export const rightContainer = style([
 export const circle = style([
   {
     borderRadius: vars.border.radius.full,
-    background: vars.palette.semantics.secondary,
+    background: colorVars.semantics.secondary,
     position: "absolute",
     top: "-20%",
     left: "15%",

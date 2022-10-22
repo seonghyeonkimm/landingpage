@@ -1,7 +1,7 @@
 import { recipe, RecipeVariants } from "@vanilla-extract/recipes";
 import { sprinkles } from "src/styles/sprinkles.css";
 
-import { vars } from "src/styles/theme.css";
+import { colorVars } from "src/styles/theme.css";
 
 export const header = recipe({
   base: [
@@ -25,7 +25,7 @@ export const header = recipe({
   variants: {
     scroll: {
       true: {
-        background: vars.palette.white,
+        background: colorVars.semantics.paper,
         boxShadow: "0px 2px 12px rgba(0, 0, 0, 0.1)",
       },
     },
