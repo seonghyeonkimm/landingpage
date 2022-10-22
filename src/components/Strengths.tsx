@@ -17,13 +17,13 @@ function Strengths(props: Props) {
         </div>
         <div>
           <img />
-          <h2>Strength1</h2>
-          <p>Strength description</p>
+          <h2>Strength2</h2>
+          <p>Strength description2</p>
         </div>
         <div>
           <img />
-          <h2>Strength1</h2>
-          <p>Strength description</p>
+          <h2>Strength3</h2>
+          <p>Strength description3</p>
         </div>
       </section>
     </article>
