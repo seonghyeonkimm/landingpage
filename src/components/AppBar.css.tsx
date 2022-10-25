@@ -13,13 +13,6 @@ export const header = recipe({
       left: 0,
       right: 0,
     },
-    sprinkles({
-      paddingX: {
-        mobile: 20,
-        tablet: 40,
-        desktop: 120,
-      },
-    }),
   ],
   variants: {
     scroll: {
@@ -31,13 +24,23 @@ export const header = recipe({
   },
 });
 
-export const wrapper = style({
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  height: 80,
-  maxWidth: 1440,
-  margin: "auto",
-});
+export const wrapper = style([
+  {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    height: 80,
+    maxWidth: 1440,
+    margin: "auto",
+  },
+
+  sprinkles({
+    paddingX: {
+      mobile: 20,
+      tablet: 40,
+      desktop: 120,
+    },
+  }),
+]);
 
 export type HeaderVariants = RecipeVariants<typeof header>;

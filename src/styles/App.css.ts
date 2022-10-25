@@ -21,3 +21,11 @@ globalStyle("html", {
 globalStyle("*, *::before, *::after", {
   boxSizing: "inherit",
 });
+
+globalStyle("h1, h2, p", {
+  margin: 0,
+});
+
+globalStyle("button", {
+  border: "none",
+});

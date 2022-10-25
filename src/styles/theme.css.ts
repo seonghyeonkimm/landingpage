@@ -74,11 +74,18 @@ const palette = {
   pink700: colors.fuchsia["700"],
   pink800: colors.fuchsia["800"],
   pink900: colors.fuchsia["900"],
+
+  neutral900: "#111827",
+  neutral700: "#374151",
 };
 
 const lightModeSemanticColors = {
   primary: "#0876DD",
+  primary100: "#E0F2FE",
+  primary600: "#0876DD",
   secondary: "#CFFAFE",
+  secondary100: "#CFFAFE",
+  secondary600: "#29D2D3",
   paper: palette.white,
 };
 
@@ -93,6 +100,7 @@ const spacing = {
   4: px(4),
   8: px(8),
   12: px(12),
+  14: px(14),
   16: px(16),
   18: px(18),
   20: px(20),
@@ -101,16 +109,16 @@ const spacing = {
   32: px(32),
   36: px(36),
   40: px(40),
+  44: px(44),
   48: px(48),
+  56: px(56),
+  60: px(60),
+  72: px(72),
   64: px(64),
   80: px(80),
   88: px(88),
   96: px(96),
   120: px(120),
-  auto: "auto",
-};
-
-const contentWidth = {
   335: px(335),
   400: px(400),
   480: px(480),
@@ -120,6 +128,7 @@ const contentWidth = {
   960: px(960),
   1120: px(1120),
   1350: px(1350),
+  auto: "auto",
 };
 
 const weight = {
@@ -142,7 +151,6 @@ const border = {
 
 export const vars = createGlobalTheme(":root", {
   spacing,
-  contentWidth,
   weight,
   border,
 });
@@ -151,7 +159,11 @@ export const colorVars = createThemeContract({
   palette,
   semantics: {
     primary: "",
+    primary100: "",
+    primary600: "",
     secondary: "",
+    secondary100: "",
+    secondary600: "",
     paper: "",
   },
 });

@@ -20,14 +20,17 @@ const responsiveProperties = defineProperties({
       "space-between",
     ],
     alignItems: ["stretch", "flex-start", "center", "flex-end"],
+    gridTemplateColumns: ["1fr", "1fr 1fr", "1fr 1fr 1fr"],
+    gap: vars.spacing,
 
     fontSize: vars.spacing,
     lineHeight: vars.spacing,
     letterSpacing: ["-0.02em", "-0.01em", "0.01em", "0.02em"],
+    textAlign: ["left", "center", "right"],
 
-    width: vars.contentWidth,
-    maxWidth: vars.contentWidth,
-    height: vars.contentWidth,
+    width: vars.spacing,
+    maxWidth: vars.spacing,
+    height: vars.spacing,
 
     paddingTop: vars.spacing,
     paddingBottom: vars.spacing,
