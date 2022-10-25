@@ -14,6 +14,8 @@ globalStyle("html", {
   fontFamily: "Noto Sans KR",
   boxSizing: "border-box",
   minWidth: 375,
+  maxWidth: 1440,
+  margin: "auto",
 });
 
 globalStyle("*, *::before, *::after", {

@@ -1,15 +1,12 @@
 import { recipe, RecipeVariants } from "@vanilla-extract/recipes";
 import { sprinkles } from "src/styles/sprinkles.css";
+import { style } from "@vanilla-extract/css";
 
 import { colorVars } from "src/styles/theme.css";
 
 export const header = recipe({
   base: [
     {
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      height: 80,
       zIndex: 1,
       position: "fixed",
       top: 0,
@@ -32,6 +29,15 @@ export const header = recipe({
       },
     },
   },
+});
+
+export const wrapper = style({
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  height: 80,
+  maxWidth: 1440,
+  margin: "auto",
 });
 
 export type HeaderVariants = RecipeVariants<typeof header>;

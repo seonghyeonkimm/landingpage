@@ -13,12 +13,14 @@ function AppBar() {
 
   return (
     <header className={styles.header({ scroll: scrollYPosition > 0 })}>
-      <Link href="#">
-        <span>
-          <Logo />
-        </span>
-      </Link>
-      <Button type="button">Get Early Access</Button>
+      <div className={styles.wrapper}>
+        <Link href="#">
+          <span>
+            <Logo />
+          </span>
+        </Link>
+        <Button type="button">Get Early Access</Button>
+      </div>
     </header>
   );
 }
