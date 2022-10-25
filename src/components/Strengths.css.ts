@@ -2,7 +2,7 @@ import { style } from "@vanilla-extract/css";
 import { recipe, RecipeVariants } from "@vanilla-extract/recipes";
 import { Typography } from "src/styles/recipe.css";
 import { sprinkles } from "src/styles/sprinkles.css";
-import { colorVars, vars } from "src/styles/theme.css";
+import { colorVars, mediaMobileOnly, vars } from "src/styles/theme.css";
 
 export const article = style([
   { textAlign: "center" },
@@ -48,7 +48,14 @@ export const imageWrapper = style([
 export const image = style([{ borderRadius: 6 }]);
 
 export const playIcon = style([
-  { marginTop: 1 },
+  {
+    marginTop: 1,
+    "@media": {
+      [`${mediaMobileOnly}`]: {
+        scale: 0.83,
+      },
+    },
+  },
   sprinkles({
     marginRight: {
       mobile: 12,
@@ -177,6 +184,14 @@ export const featureIcon = recipe({
 });
 
 export type FeatureIconVariants = RecipeVariants<typeof featureIcon>;
+
+export const featureIconSvg = style({
+  "@media": {
+    [`${mediaMobileOnly}`]: {
+      scale: 0.75,
+    },
+  },
+});
 
 export const featureTitle = style([
   Typography({

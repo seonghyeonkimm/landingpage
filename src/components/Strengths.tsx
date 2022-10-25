@@ -69,7 +69,9 @@ type ItemProps = styles.FeatureIconVariants & {
 function StrengthItem({ icon, title, description, variant }: ItemProps) {
   return (
     <div className={styles.feature}>
-      <div className={styles.featureIcon({ variant })}>{icon}</div>
+      <div className={styles.featureIcon({ variant })}>
+        <span className={styles.featureIconSvg}>{icon}</span>
+      </div>
       <div className={styles.featureContent}>
         <h2 className={styles.featureTitle}>{title}</h2>
         <p className={styles.featureDesc}>{description}</p>

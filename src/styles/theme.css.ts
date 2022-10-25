@@ -10,6 +10,9 @@ export const breakpoints = {
   tablet: 768,
   desktop: 1024,
 };
+export const mediaMobileOnly = `screen and (min-width: ${
+  breakpoints.mobile
+}px) and (max-width: ${breakpoints.tablet - 1}px)`;
 export const mediaTablet = `screen and (min-width: ${breakpoints.tablet}px)`;
 export const mediaTabletOnly = `screen and (min-width: ${
   breakpoints.tablet
