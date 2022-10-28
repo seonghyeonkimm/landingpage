@@ -78,8 +78,9 @@ const palette = {
   pink800: colors.fuchsia["800"],
   pink900: colors.fuchsia["900"],
 
-  neutral900: "#111827",
+  neutral400: "#9CA3AF",
   neutral700: "#374151",
+  neutral900: "#111827",
 };
 
 const lightModeSemanticColors = {
@@ -109,6 +110,7 @@ const spacing = {
   20: px(20),
   24: px(24),
   28: px(28),
+  30: px(30),
   32: px(32),
   36: px(36),
   40: px(40),

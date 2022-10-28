@@ -51,12 +51,21 @@ export const Typography = recipe({
           mobile: "-0.01em",
         },
       }),
-      displaysm: {
-        fontSize: px(30),
-        lineHeight: px(40),
-
-        letterSpacing: "-0.01em",
-      },
+      displaysm: sprinkles({
+        fontSize: {
+          mobile: 30,
+          tablet: 36,
+          desktop: 48,
+        },
+        lineHeight: {
+          mobile: 40,
+          tablet: 48,
+          desktop: 60,
+        },
+        letterSpacing: {
+          mobile: "-0.01em",
+        },
+      }),
       displayxs: {
         fontSize: px(24),
         lineHeight: px(32),
