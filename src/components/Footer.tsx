@@ -32,7 +32,13 @@ function Footer() {
             </p>
             <p className={styles.copyRight}>
               For further details, drop a mail to
-              <span className={styles.highlight}> hello@landify.design</span>
+              <a
+                className={styles.highlight}
+                href="mailto:hello@landify.design"
+              >
+                {" "}
+                hello@landify.design
+              </a>
             </p>
           </div>
         </div>

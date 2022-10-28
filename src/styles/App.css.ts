@@ -30,3 +30,7 @@ globalStyle("img", {
   maxWidth: "100%",
   height: "auto",
 });
+
+globalStyle("a", {
+  textDecoration: "none",
+});
