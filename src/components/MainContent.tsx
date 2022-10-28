@@ -9,7 +9,7 @@ import * as styles from "./MainContent.css";
 
 function MainContent() {
   return (
-    <main className={styles.main}>
+    <section className={styles.main}>
       <article className={styles.article}>
         <section className={styles.leftContainer}>
           <h1 className={styles.h1}>Event Registration Reimagined</h1>
@@ -29,7 +29,7 @@ function MainContent() {
           />
         </section>
       </article>
-    </main>
+    </section>
   );
 }
 
