@@ -1,6 +1,10 @@
 # LandingPage
 
-Template for Landing Page
+Responsive Design Landing Page Template
+
+| Desktop                                           |                     Tablet                      |                                          Mobile |
+| :------------------------------------------------ | :---------------------------------------------: | ----------------------------------------------: |
+| ![Desktop View Example Image](./docs/desktop.png) | ![Tablet View Example Image](./docs/tablet.png) | ![Mobile View Example Image](./docs/mobile.png) |
 
 ## Reference
 
