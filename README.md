@@ -2,9 +2,22 @@
 
 Responsive Design Landing Page Template
 
-| Desktop                                           |                     Tablet                      |                                          Mobile |
-| :------------------------------------------------ | :---------------------------------------------: | ----------------------------------------------: |
-| ![Desktop View Example Image](./docs/desktop.png) | ![Tablet View Example Image](./docs/tablet.png) | ![Mobile View Example Image](./docs/mobile.png) |
+<table>
+  <thead>
+    <tr>
+      <th>Desktop</th>
+      <th>Tablet</th>
+      <th>Mobile</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;"><img src="./docs/desktop.png"/></td>
+      <td style="vertical-align: top;"><img src="./docs/tablet.png" /></td>
+      <td style="vertical-align: top;"><img src="./docs/mobile.png" /></td>
+    </tr>
+  </tbody>
+</table>
 
 ## Reference
 
