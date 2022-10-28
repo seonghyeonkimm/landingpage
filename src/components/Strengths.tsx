@@ -15,7 +15,7 @@ function Strengths(props: Props) {
       <h1 className={styles.h1}>All-in-one Event Platform</h1>
       <p className={styles.p}>Deliver an exceptional event experience</p>
       <div className={styles.imageWrapper}>
-        <Image src={videoImage} className={styles.image} />
+        <Image alt="Macbook Pro" src={videoImage} className={styles.image} />
         <button className={styles.playButton}>
           <Play className={styles.playIcon} />
           See it in action (2 min)

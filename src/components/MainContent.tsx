@@ -23,7 +23,10 @@ function MainContent() {
         </section>
         <section className={styles.rightContainer}>
           <div className={styles.circle} />
-          <Image src={mainImage} />
+          <Image
+            alt="Event Registration Reimagined Landing Page"
+            src={mainImage}
+          />
         </section>
       </article>
     </main>

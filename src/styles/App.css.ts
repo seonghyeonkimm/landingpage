@@ -29,3 +29,8 @@ globalStyle("h1, h2, p", {
 globalStyle("button", {
   border: "none",
 });
+
+globalStyle("img", {
+  maxWidth: "100%",
+  height: "auto",
+});
