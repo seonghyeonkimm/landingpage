@@ -12,9 +12,6 @@ globalStyle("html", {
   background: colorVars.semantics.paper,
   color: colorVars.palette.gray900,
   boxSizing: "border-box",
-  minWidth: 375,
-  maxWidth: 1440,
-  margin: "auto",
 });
 
 globalStyle("*, *::before, *::after", {

@@ -8,13 +8,15 @@ import * as styles from "./index.css";
 
 function MainPage() {
   return (
-    <section className={styles.section}>
-      <AppBar />
-      <MainContent />
-      <Strengths />
-      <Banner />
+    <div>
+      <section className={styles.section}>
+        <AppBar />
+        <MainContent />
+        <Strengths />
+        <Banner />
+      </section>
       <Footer />
-    </section>
+    </div>
   );
 }
 

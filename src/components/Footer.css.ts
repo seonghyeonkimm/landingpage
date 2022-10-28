@@ -1,12 +1,18 @@
 import { sprinkles } from "src/styles/sprinkles.css";
 import { style } from "@vanilla-extract/css";
 
-import { colorVars, mediaDesktop, vars } from "src/styles/theme.css";
+import { colorVars } from "src/styles/theme.css";
 import { Typography } from "src/styles/recipe.css";
+
+export const container = style({
+  background: colorVars.palette.neutral900,
+});
 
 export const article = style([
   {
-    background: colorVars.palette.neutral900,
+    minWidth: 375,
+    maxWidth: 1440,
+    margin: "auto",
     paddingTop: 64,
     paddingBottom: 40,
   },
