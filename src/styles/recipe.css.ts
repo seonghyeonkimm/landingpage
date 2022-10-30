@@ -1,7 +1,10 @@
-import { recipe, RecipeVariants } from "@vanilla-extract/recipes";
+import type { RecipeVariants } from "@vanilla-extract/recipes";
+import { recipe } from "@vanilla-extract/recipes";
+
+import { px } from "./utils";
+
 import { sprinkles } from "./sprinkles.css";
 import { vars } from "./theme.css";
-import { px } from "./utils";
 
 export const Typography = recipe({
   base: {},

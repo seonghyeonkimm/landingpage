@@ -1,5 +1,6 @@
 import colors from "tailwindcss/colors";
 import { createGlobalTheme, createThemeContract } from "@vanilla-extract/css";
+
 import { px } from "./utils";
 
 export const darkMode = "[data-theme='dark']";
