@@ -1,7 +1,8 @@
-import { colorVars, vars } from "src/styles/theme.css";
+import type { RecipeVariants } from "@vanilla-extract/recipes";
+import { recipe } from "@vanilla-extract/recipes";
 
-import { recipe, RecipeVariants } from "@vanilla-extract/recipes";
 import { Typography } from "src/styles/recipe.css";
+import { colorVars, vars } from "src/styles/theme.css";
 
 export const button = recipe({
   base: [

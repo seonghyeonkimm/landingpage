@@ -1,5 +1,7 @@
 import { style } from "@vanilla-extract/css";
-import { recipe, RecipeVariants } from "@vanilla-extract/recipes";
+import type { RecipeVariants } from "@vanilla-extract/recipes";
+import { recipe } from "@vanilla-extract/recipes";
+
 import { Typography } from "src/styles/recipe.css";
 import { sprinkles } from "src/styles/sprinkles.css";
 import { colorVars, mediaMobileOnly, vars } from "src/styles/theme.css";

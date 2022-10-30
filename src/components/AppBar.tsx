@@ -1,12 +1,13 @@
-import Link from "next/link";
 import * as React from "react";
+import Link from "next/link";
 
-import Button from "./Button";
 import useWindowSrollYPosition from "src/hooks/useWindowScrollYPosition";
 
-import * as styles from "./AppBar.css";
+import Button from "./Button";
 
 import Logo from "src/assets/logo.svg";
+
+import * as styles from "./AppBar.css";
 
 function AppBar() {
   const scrollYPosition = useWindowSrollYPosition();

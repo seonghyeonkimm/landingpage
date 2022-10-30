@@ -1,8 +1,8 @@
-import { sprinkles } from "src/styles/sprinkles.css";
 import { style } from "@vanilla-extract/css";
 
-import { colorVars } from "src/styles/theme.css";
 import { Typography } from "src/styles/recipe.css";
+import { sprinkles } from "src/styles/sprinkles.css";
+import { colorVars } from "src/styles/theme.css";
 
 export const container = style({
   background: colorVars.palette.neutral900,

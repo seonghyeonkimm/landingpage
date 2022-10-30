@@ -2,14 +2,13 @@ import * as React from "react";
 import Image from "next/image";
 
 import videoImage from "src/assets/video.png";
+
 import Feature1 from "src/assets/feature-1.svg";
 import Play from "src/assets/play-icon.svg";
 
 import * as styles from "./Strengths.css";
 
-type Props = {};
-
-function Strengths(props: Props) {
+function Strengths() {
   return (
     <article className={styles.article}>
       <h1 className={styles.h1}>All-in-one Event Platform</h1>

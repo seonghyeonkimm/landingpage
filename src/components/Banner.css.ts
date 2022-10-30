@@ -1,8 +1,8 @@
-import { sprinkles } from "src/styles/sprinkles.css";
 import { style } from "@vanilla-extract/css";
 
-import { colorVars, mediaDesktop, vars } from "src/styles/theme.css";
 import { Typography } from "src/styles/recipe.css";
+import { sprinkles } from "src/styles/sprinkles.css";
+import { colorVars, mediaDesktop, vars } from "src/styles/theme.css";
 
 export const article = style([
   { overflow: "hidden", position: "relative" },
